@@ -1,0 +1,60 @@
+.app-input {
+  position: relative;
+  padding-bottom: 20px;
+
+  &__content {
+    display: block;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 19px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    margin-top: 15px;
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+
+    &::placeholder {
+      font-size: 14px;
+      letter-spacing: 0.42px;
+      color: #949494;
+      opacity: 0.4;
+      text-align: center;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+    color: #949494;
+  }
+
+  &__message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    color: #FF5959;
+  }
+
+  &--invalid {
+    .app-input {
+      &__input {
+        box-shadow: 0px 0px 10px 0px rgba(255, 89, 89, 0.20);
+        border-color: #FF5959;
+        color: #FF5959;
+      }
+    }
+  }
+}

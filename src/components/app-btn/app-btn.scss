@@ -1,0 +1,40 @@
+@import "../../assets/scss/variables";
+
+.app-btn {
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+  padding-bottom: 18px;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.22px;
+  width: 100%;
+  background-color: #D2D2D2;
+  cursor: pointer;
+
+  transition: .3s;
+
+  &:hover:not(&[disabled]) {
+    background-color: #9d9898;
+  }
+
+  &--primary {
+    color: white;
+    background-color: $blue;
+
+    &[disabled] {
+      opacity: 1;
+      background-color: #6172d2;
+    }
+
+    &:hover:not(&[disabled]) {
+      background-color: #4457d0;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

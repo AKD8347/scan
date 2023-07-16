@@ -1,0 +1,147 @@
+.search-page {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: flex-end;
+  padding-top: 69px;
+  padding-bottom: 64px;
+
+  &__column {
+    min-width: 872px;
+  }
+
+  &__title {
+    font-size: 40px;
+    letter-spacing: 1.2px;
+    max-width: 817px;
+  }
+
+  &__subtitle {
+    letter-spacing: 0.4px;
+    margin-top: 25px;
+    margin-bottom: 47px;
+  }
+
+  &__img {
+    max-height: 470px;
+    width: calc(100% - 872px);
+    object-fit: contain;
+  }
+
+  &__img1 {
+    position: absolute;
+    top: 132px;
+    right: 411px;
+  }
+
+  &__img2 {
+    position: absolute;
+    top: 150px;
+    right: 104px
+  }
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    &__column {
+      width: 100%;
+      min-width: unset;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__img1 {
+      top: 170px;
+      right: 250px;
+    }
+
+    &__img2 {
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 20px;
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__img1 {
+      top: 60px;
+      right: 0;
+    }
+
+    &__img2 {
+      display: none;
+    }
+
+    .search-card {
+      padding: 24px 26px 65px 14px;
+    }
+
+    .search-card__form {
+      flex-direction: column;
+
+      .app-input__input {
+        max-width: unset;
+      }
+
+      .app-select {
+        max-width: unset;
+      }
+
+      .app-date-picker {
+        flex: 1;
+
+        &__inner {
+          max-width: unset;
+        }
+      }
+    }
+
+    .search-card__checkboxes {
+      margin-top: 20px;
+    }
+
+    .search-card__btn-wrapper {
+      margin-left: unset;
+
+      .search-card__btn {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__subtitle {
+      width: 297px;
+    }
+
+    &__img1 {
+      width: 60px;
+      top: 130px
+    }
+
+    .search-card {
+      &__field {
+        &--date {
+          > label {
+            > div {
+              flex-direction: column;
+              gap: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

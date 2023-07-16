@@ -1,0 +1,82 @@
+.auth-card {
+  position: relative;
+  min-width: 429px;
+  border-radius: 10px;
+  padding: 25px 25px 29px;
+  margin-left: auto;
+  margin-right: 81px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+
+  &__img {
+    position: absolute;
+    left: -50px;
+    top: -55px;
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+    text-align: center;
+    color: #C7C7C7;
+    cursor: pointer;
+
+    transition: .3s;
+
+    &:after {
+      content: "";
+      width: 100%;
+      margin-top: 8px;
+      height: 2px;
+      background-color: #C7C7C7;
+
+      transition: .3s;
+    }
+
+    &--active {
+      color: #029491;
+
+      &:after {
+        background-color: #029491;
+      }
+    }
+
+    &:first-child {
+      width: 39.85%;
+    }
+
+    &:last-child {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+    color: #949494;
+  }
+
+  &__footer {
+    margin-top: 30px;
+  }
+
+  &__login-items {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+  }
+}

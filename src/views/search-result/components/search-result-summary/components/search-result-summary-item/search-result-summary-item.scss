@@ -1,0 +1,20 @@
+.search-result-summary-item {
+  position: relative;
+  padding: 16px 18px 14px 0px;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 17px;
+    bottom: 17px;
+    width: 2px;
+    background-color: #949494;
+    opacity: 0.4;
+  }
+}

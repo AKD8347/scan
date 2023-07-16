@@ -1,0 +1,54 @@
+@import "./fonts";
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: 'Ferry', sans-serif;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: 'Ferry', sans-serif;
+  font-size: 45px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+input {
+  outline: none;
+  padding: 0
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-title {
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.app-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}

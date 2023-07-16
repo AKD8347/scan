@@ -1,0 +1,101 @@
+.search-card {
+  padding: 29px 39px 65px 44px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+
+  &__form {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__column:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    &:not(.search-card__field:nth-child(1)) {
+      margin-top: 10px;
+    }
+
+    &--date {
+      margin-top: 10px;
+
+      label {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+          display: flex;
+          gap: 20px
+        }
+      }
+    }
+
+    label span {
+      font-size: 18px;
+      color: black;
+    }
+
+    strong {
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .app-date-picker__label {
+      margin-bottom: 20px;
+    }
+
+    .app-input__message {
+      text-align: left;
+    }
+
+    .app-input__input {
+      padding-left: 17px;
+      max-width: 242px;
+    }
+
+    .app-select {
+      max-width: 242px;
+    }
+
+    .app-date-picker__inner {
+      padding-left: 17px;
+      max-width: 176px;
+    }
+
+    .app-input__input, .app-select__inner {
+      margin-top: 20px;
+    }
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 17px;
+  }
+
+  &__btn {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 305px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      transform: translateY(50%);
+      //margin-top: auto;
+      //margin-top: 135px;
+    }
+  }
+
+  &__info-text {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    color: #949494;
+    margin-top: 10px;
+  }
+}

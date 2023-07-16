@@ -1,0 +1,32 @@
+.login-form {
+  &__btn {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 10px;
+  }
+
+  &__recovery-password {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.28px;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+    text-align: center;
+    color: #5970FF;
+
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #5970FF;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.auth-page {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 69px;
+  padding-bottom: 80px;
+
+  &__column {
+    max-width: 800px;
+  }
+
+  &__title {
+    font-size: 40px;
+    letter-spacing: 0.8px;
+  }
+
+  &__img {
+    margin-top: 13px;
+    margin-left: 112px;
+  }
+
+  @media (max-width: 1300px) {
+    .auth-card {
+      margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 1100px) {
+    &__column {
+      width: 50%;
+    }
+
+    &__img {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .auth-card {
+      &__img {
+        left: 81px;
+        top: -75px
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 22px;
+    flex-direction: column;
+    align-items: center;
+
+    &__column {
+      width: 100%;
+      max-width: unset;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    .auth-card {
+      margin-top: 126px;
+      min-width: unset;
+      width: 100%;
+
+      &__login-items {
+        flex-wrap: wrap;
+      }
+
+      &__tab {
+        font-size: 14px;
+      }
+
+      .app-input__label {
+        font-size: 14px;
+      }
+
+      .app-btn {
+        font-size: 20px;
+      }
+    }
+
+    &__img {
+      max-width: 600px;
+      object-fit: contain;
+    }
+  }
+}

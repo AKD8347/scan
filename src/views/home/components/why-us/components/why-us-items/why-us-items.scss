@@ -1,0 +1,34 @@
+.why-us-items {
+  position: relative;
+  display: flex;
+
+  .swiper {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  &__navigation {
+    position: absolute;
+    width: 39px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+
+    &:first-child {
+      left: 0;
+    }
+
+    &:last-child {
+      right: 0;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
