@@ -22,3 +22,7 @@ export const loginOrPhone = (value) => {
 export const inn = (value) => {
     return Number.isInteger(+value) && value.length === 10 ? undefined : 'Введите корректные данные'
 }
+
+export const numOfDocInIssue = (value) => {
+    return Number.isInteger(+value) && value >= 1 && value <= 1000 ? undefined : 'Введите корректные данные'
+}

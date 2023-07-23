@@ -1,5 +1,5 @@
 import AppInput from "../../../../../../components/app-input/AppInput";
-import {composeValidators, inn, required} from "../../../../../../utils/validators";
+import {composeValidators, inn, numOfDocInIssue, required} from "../../../../../../utils/validators";
 import AppSelect from "../../../../../../components/app-select/AppSelect";
 import AppDatePicker from "../../../../../../components/app-date-picker/AppDatePicker";
 import AppCheckbox from "../../../../../../components/app-checkbox/AppCheckbox";
@@ -9,15 +9,9 @@ import {useState} from "react";
 
 const tonalities = [
     {value: "any", label: "Любая"},
+    {value: 'negative', label: 'Негативная'},
+    {value: 'positive', label: 'Позитивная'}
 ];
-
-for (let i = -10; i <= 10; ++i) {
-    if (i === 0) {
-        continue
-    }
-
-    tonalities.push({value: i, label: i})
-}
 
 function SearchForm({onSubmit}) {
     const [tonality, setTonality] = useState(tonalities[0])
@@ -35,6 +29,7 @@ function SearchForm({onSubmit}) {
         const data = {
             inn: values.inn,
             tonality: tonality.value,
+            limit: values.limit,
             startDate,
             endDate
         }
@@ -69,8 +64,9 @@ function SearchForm({onSubmit}) {
                     </div>
                     <div className="search-card__field">
                         <AppInput
-                            name="count"
+                            name="limit"
                             label="Количество документов в выдаче <strong>*</strong>"
+                            validate={composeValidators(required, numOfDocInIssue)}
                             placeholder="от 1 до 1000"
                         >
                         </AppInput>

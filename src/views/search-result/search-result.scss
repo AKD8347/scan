@@ -150,6 +150,15 @@
         border-bottom-right-radius: 10px;
       }
 
+      &__spinner {
+        height: 100% !important;
+
+        svg {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
       &__navigation {
         top: 100px;
       }

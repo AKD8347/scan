@@ -3,16 +3,27 @@ import './search-result-docs.scss'
 import SearchResultDocsCard from "./components/search-result-docs-card/SearchResultDocsCard";
 import AppBtn from "../../../../components/app-btn/AppBtn";
 
-import {getDocs} from "../../../../mock/search-result-docs";
+import api from "../../../../api";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-function SearchResultDocs() {
-    const [currentDocCount, setCurrentDocCount] = useState(10)
-    const docsData = getDocs()
-    const docs = docsData.data.slice(0, currentDocCount)
+function SearchResultDocs({docIds}) {
+    const [currentDocCount, setCurrentDocCount] = useState(0)
+    const [docs, setDocs] = useState([])
 
-    const isShowBtn = currentDocCount < docsData.total
+    useEffect(() => {
+        const ids = docIds.map(id => id.encodedId).slice(currentDocCount, currentDocCount + 10)
+        if (ids.length) {
+            loadDocs(ids)
+        }
+    }, [currentDocCount])
+
+    const loadDocs = async (ids) => {
+        const response = (await api.search.getDocs(ids)).map(doc => doc.ok)
+        setDocs([...docs, ...response])
+    }
+
+    const isShowBtn = currentDocCount < docIds.length
 
     const showMore = () => {
         setCurrentDocCount(currentDocCount + 10)

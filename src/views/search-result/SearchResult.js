@@ -5,7 +5,30 @@ import SearchResultSection from "./components/search-result-section/SearchResult
 import SearchResultSummary from "./components/search-result-summary/SearchResultSummary";
 import SearchResultDocs from "./components/search-result-docs/SearchResultDocs";
 
+import {useSelector} from "react-redux";
+import {selectSearchData} from "../../store/features/searchSlice";
+
+import {useEffect} from "react";
+
+import {useNavigate} from "react-router";
+import notify from "../../utils/notify";
+
 function SearchResult() {
+    const navigate = useNavigate()
+    const {searching, searchData} = useSelector(selectSearchData)
+    const subtitle = searchData.summary.length ?
+        `Найдено ${searchData.summary.length.toLocaleString()} вариантов` :
+        ''
+
+    useEffect(() => {
+        if (!searching && !searchData.summary.length) {
+            setTimeout(() => {
+                notify('Ошибка', 'Ничего не найдено', 'danger')
+                navigate('/search')
+            })
+        }
+    }, [searching, searchData])
+
     return <div className="search-result-page">
         <div className="search-result-page__header">
             <div className="search-result-page__header-column">
@@ -18,13 +41,15 @@ function SearchResult() {
             <img src={SearchResultImg} className="search-result-page__img"></img>
         </div>
 
-        <SearchResultSection title="Общая сводка" subtitle="Найдено 4 221 вариантов">
-            <SearchResultSummary></SearchResultSummary>
+        <SearchResultSection title="Общая сводка" subtitle={subtitle}>
+            <SearchResultSummary summary={searchData.summary} searching={searching}></SearchResultSummary>
         </SearchResultSection>
 
-        <SearchResultSection title="Список документов">
-            <SearchResultDocs></SearchResultDocs>
-        </SearchResultSection>
+        {!searching &&
+            <SearchResultSection title="Список документов">
+                <SearchResultDocs docIds={searchData.ids}></SearchResultDocs>
+            </SearchResultSection>
+        }
     </div>
 }
 

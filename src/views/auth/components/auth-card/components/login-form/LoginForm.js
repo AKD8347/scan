@@ -11,7 +11,7 @@ import {Form} from 'react-final-form'
 import {useDispatch} from "react-redux";
 import {login} from "../../../../../../store/features/userSlice";
 
-import { Store } from 'react-notifications-component';
+import notify from "../../../../../../utils/notify";
 
 function LoginForm() {
     const dispatch = useDispatch()
@@ -21,18 +21,7 @@ function LoginForm() {
             await dispatch(login(formData))
             navigate('/')
         } catch (e) {
-            Store.addNotification({
-                title: "Ошибка",
-                message: "Неверный логин или пароль",
-                type: "danger",
-                container: "top-right",
-                animationIn: ["animate__animated", "animate__fadeIn"],
-                animationOut: ["animate__animated", "animate__fadeOut"],
-                dismiss: {
-                    duration: 2000,
-                    onScreen: true
-                }
-            });
+            notify('Ошибка', 'Неверный логин или пароль', 'danger')
         }
     }
 
